@@ -11,8 +11,15 @@
 }
 
 .jumbotron-green {
-    color: #5cb85c;
+    color: green;
     background-color: white;
+    background-image: linear-gradient(white 0px, whitesmoke 100%);
+    background-repeat: repeat-x;
+    margin-bottom: 0;
+}
+
+.jumbotron-green h2{
+    color: black;
 }
 
 .text-tiny {
