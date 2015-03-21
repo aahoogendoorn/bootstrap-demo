@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="action" targets="button" />
+        <composite:attribute name="label" type="java.lang.String" default="Ok"/>
+        <composite:attribute name="glyph" type="java.lang.String" default="thumbs-up"/>
+        <composite:attribute name="render" type="java.lang.String" default="@form"/>
+        <composite:attribute name="execute" type="java.lang.String" default="@form"/>
+        <composite:attribute name="style" type="java.lang.String" default="btn-primary"/>
+        <composite:attribute name="immediate" default="false"/>
+        <composite:attribute name="disabled" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="lockscreen" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="onclick" type="java.lang.String"/>
+        <composite:attribute name="oncomplete" type="java.lang.String"/>
+        <composite:attribute name="ajax" type="java.lang.Boolean" default="true"/>
+        <composite:clientBehavior name="click" event="click" targets="button"/>
+        <composite:attribute name="tabindex" type="java.lang.String"/>
+        <composite:attribute name="customStyle" required="false" type="java.lang.String"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <h:commandLink id="button"
+                          status="#{cc.attrs.lockscreen?'waitPanelStatus':''}" style="#{cc.attrs.customStyle}" onclick="#{cc.attrs.onclick}"
+             disabled="#{cc.attrs.disabled}" styleClass="btn #{cc.attrs.style} defaultButton" immediate="#{cc.attrs.immediate}" tabindex="#{cc.attrs.tabindex}">
+            <span class="fa fa-#{cc.attrs.glyph}"/>
+            #{cc.attrs.label}
+            <f:ajax disabled="#{not cc.attrs.ajax}" execute="#{cc.attrs.execute}" render="#{cc.attrs.render}" immediate="#{cc.attrs.immediate}"
+                    oncomplete="#{cc.attrs.oncomplete}" status="#{cc.attrs.lockscreen?'waitPanelStatus':''}"/>
+
+        </h:commandLink>
+    </composite:implementation>
+</ui:composition>

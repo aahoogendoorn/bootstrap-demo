@@ -1,0 +1,77 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+                xmlns:b="http://java.sun.com/jsf/composite/bootstrap/controls"
+                xmlns:h="http://java.sun.com/jsf/html"
+        >
+
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="model" type="nl.klaverblad.libs.web.jsf.components.GridModel"/>
+        <composite:attribute name="render" type="java.lang.String" default="@form"/>
+        <composite:attribute name="visible" type="java.lang.Boolean" default="true"/>
+        <composite:attribute name="title" type="java.lang.String"/>
+        <composite:attribute name="sortable" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="titleGlyph" type="java.lang.String" default="search"/>
+        <composite:attribute name="rowClick" type="java.lang.String"/>
+        <composite:attribute name="rowStyle" type="java.lang.String" />
+        <composite:facet name="heading"/>
+        <composite:facet name="footer"/>
+        <composite:facet name="actions"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <a4j:outputPanel id="gridPanel" layout="block"
+                         rendered="#{cc.attrs.model.size gt 0 or cc.attrs.visible}">
+
+            <div class="panel panel-grid">
+                <h:panelGroup layout="block" styleClass="panel-heading" rendered="#{not empty cc.attrs.title}">
+                    <h3 class="panel-title">
+                        <span class="fa fa-#{cc.attrs.titleGlyph}"/>
+                        #{cc.attrs.title}
+                    </h3>
+                </h:panelGroup>
+
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table#{not empty cc.attrs.rowClick?' table-hover':''}#{cc.attrs.sortable?' tablesorter':''}" id="#{cc.id}_table">
+                            <thead>
+                            <tr>
+                                <composite:renderFacet name="heading"/>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <ui:repeat value="#{cc.attrs.model.objects}" var="item" offset="#{cc.attrs.model.offset}"
+                                       size="#{cc.attrs.model.lastPage? cc.attrs.model.size:cc.attrs.model.rowCount + cc.attrs.model.offset}"
+                                       varStatus="status">
+                                <tr onclick="$(this).addClass('selected').siblings().removeClass('selected');#{not empty cc.attrs.rowClick? cc.attrs.rowClick.concat('(\'').concat(item.id).concat('\')'):''}"
+                                        class="#{item.id eq cc.attrs.model.selectedId? 'selected':''}#{cc.attrs.rowStyle}">
+                                    <composite:insertChildren/>
+                                    <composite:renderFacet name="actions"/>
+                                </tr>
+                            </ui:repeat>
+
+                            </tbody>
+                            <ui:fragment rendered="#{not empty cc.facets.footer}">
+                                <tfoot>
+                                <composite:renderFacet name="footer"/>
+                                </tfoot>
+                            </ui:fragment>
+                        </table>
+                    </div>
+                </div>
+                <a4j:outputPanel layout="block" styleClass="panel-footer"
+                                 rendered="#{not (cc.attrs.model.firstPage and cc.attrs.model.lastPage)}">
+                    <b:result model="#{cc.attrs.model}"/>
+                    <b:paging model="#{cc.attrs.model}" render="#{cc.attrs.render}"/>
+                </a4j:outputPanel>
+            </div>
+
+            <composite:renderFacet name="sortconfig"/>
+
+        </a4j:outputPanel>
+    </composite:implementation>
+</ui:composition>

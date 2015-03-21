@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+                xmlns:b="http://java.sun.com/jsf/composite/bootstrap/controls"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="name" type="java.lang.String" default="#{cc.attrs.label}"/>
+        <composite:attribute name="label" type="java.lang.String"/>
+        <composite:attribute name="glyph" type="java.lang.String"/>
+        <composite:attribute name="value" type="java.lang.Object"/>
+        <composite:attribute name="converterId" type="java.lang.String"/>
+        <composite:attribute name="showEmpty" type="java.lang.Boolean" default="true"/>
+        <composite:facet name="value"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <h:panelGroup styleClass="control-group" layout="block"
+                      rendered="#{not empty cc.attrs.value or cc.attrs.showEmpty}">
+            <label class="control-label" for="p#{cc.attrs.label}">#{cc.attrs.label}</label>
+
+            <p id="p#{cc.attrs.label}">
+                <b:icon name="#{cc.attrs.glyph}" rendered="#{not empty cc.attrs.glyph}"/>
+                <h:outputText value="#{cc.attrs.value}">
+                    <c:if test="#{not empty cc.attrs.converterId}">
+                        <f:converter converterId="#{cc.attrs.converterId}"/>
+                    </c:if>
+                </h:outputText>
+                <composite:renderFacet name="value"/>
+            </p>
+        </h:panelGroup>
+    </composite:implementation>
+</ui:composition>

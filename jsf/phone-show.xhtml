@@ -1,0 +1,15 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:composite="http://java.sun.com/jsf/composite"
+              xmlns:b="http://java.sun.com/jsf/composite/bootstrap/controls">
+
+    <composite:interface>
+        <composite:attribute name="target" type="nl.klaverblad.libs.domain.valueobjects.Telefoonnummer"/>
+        <composite:attribute name="label" type="java.lang.String" default="Telefoon"/>
+    </composite:interface>
+
+    <composite:implementation>
+        <b:item glyph="phone" label="#{cc.attrs.label}" value="#{cc.attrs.target}" rendered="#{not empty cc.attrs.target and not cc.attrs.target.isEmpty()}"/>
+    </composite:implementation>
+
+</ui:component>

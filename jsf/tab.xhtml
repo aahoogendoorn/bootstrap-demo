@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="active" type="java.lang.Boolean" default="false" />
+        <composite:attribute name="title" type="java.lang.String" required="true"/>
+        <composite:attribute name="style" type="java.lang.String"/>
+        <composite:attribute name="action" targets="tab"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <li class="#{cc.attrs.active?'active ':''}#{cc.attrs.style}"><h:commandLink id="tab" render="@form" execute="@form" role="tab" data-toggle="tab">#{cc.attrs.title}</h:commandLink></li>
+    </composite:implementation>
+</ui:composition>

@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="label" type="java.lang.String"/>
+        <composite:attribute name="style" type="java.lang.String"/>
+        <composite:facet name="value"/>
+    </composite:interface>
+
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+            <h:outputLabel styleClass="control-label" for="item" value="#{cc.attrs.label}" rendered="#{not empty cc.attrs.label}"/>
+            <h:panelGroup layout="block" styleClass="form-inline #{cc.attrs.style}" id="item">
+                    <composite:renderFacet name="value"/>
+            </h:panelGroup>
+
+    </composite:implementation>
+    <!-- IMPLEMENTATION -->
+</ui:composition>

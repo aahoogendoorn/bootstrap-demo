@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="action" targets="button"/>
+        <composite:attribute name="label" type="java.lang.String" default="Terug"/>
+        <composite:attribute name="execute" type="java.lang.String"/>
+        <composite:attribute name="render" type="java.lang.String" default="@form"/>
+        <composite:attribute name="style" type="java.lang.String" default="btn-default"/>
+        <composite:attribute name="immediate" default="true"/>
+        <composite:attribute name="disabled" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="glyph" type="java.lang.String" default="thumbs-down"/>
+        <composite:attribute name="oncomplete" type="java.lang.String"/>
+        <composite:clientBehavior name="click" event="click" targets="button"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <a4j:commandLink id="button"
+                         execute="#{cc.attrs.execute}" render="#{cc.attrs.render}" oncomplete="#{cc.attrs.oncomplete}"
+                         disabled="#{cc.attrs.disabled}" styleClass="btn #{cc.attrs.style}"
+                         immediate="#{cc.attrs.immediate}">
+            <h:panelGroup styleClass="fa fa-lg fa-#{cc.attrs.glyph}" rendered="#{not empty cc.attrs.glyph}"/>
+            #{cc.attrs.label}
+        </a4j:commandLink>
+    </composite:implementation>
+</ui:composition>

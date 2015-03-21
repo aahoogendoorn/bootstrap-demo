@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+                xmlns:b="http://java.sun.com/jsf/composite/bootstrap/controls"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="description" type="java.lang.String"/>
+        <composite:attribute name="test" type="java.lang.Boolean"/>
+        <composite:attribute name="yesGlyph" type="java.lang.String" default="check"/>
+        <composite:attribute name="noGlyph" type="java.lang.String" default="times"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <p>
+            <b:icon name="#{cc.attrs.yesGlyph}" rendered="#{cc.attrs.test}"/>
+            <b:icon name="#{cc.attrs.noGlyph}" rendered="#{!cc.attrs.test}" error="true"/>
+            #{cc.attrs.description}
+        </p>
+
+    </composite:implementation>
+</ui:composition>

@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="address" type="java.lang.String" default=""/>
+        <composite:attribute name="mapsize" type="java.lang.String" default="400x200"/>
+
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <img border="0" src="http://maps.googleapis.com/maps/api/staticmap?center=#{cc.attrs.address}&amp;size=#{cc.attrs.mapsize}"/>
+    </composite:implementation>
+</ui:composition>

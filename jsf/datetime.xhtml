@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="value" type="org.joda.time.LocalDateTime"/>
+        <composite:attribute name="align" type="java.lang.String" default="right"/>
+        <composite:attribute name="layout" type="java.lang.String" default="inherit" shortDescription="inline or block"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <span class="pull-#{cc.attrs.align}" style="display: #{cc.attrs.layout}">#{formatter.formatDateTime(cc.attrs.value)}</span>
+    </composite:implementation>
+</ui:composition>

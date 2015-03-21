@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+
+        <composite:attribute name="style" type="java.lang.String"/>
+        <composite:facet name="tabs"/>
+        <composite:facet name="tabpanes"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs #{cc.attrs.style} tabbable" role="tablist">
+            <composite:renderFacet name="tabs"/>
+        </ul>
+
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <composite:renderFacet name="tabpanes"/>
+        </div>
+    </composite:implementation>
+</ui:composition>

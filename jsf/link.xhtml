@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="action" targets="link" />
+        <composite:attribute name="label" type="java.lang.String" default="Ok"/>
+        <composite:attribute name="target" type="java.lang.String" default="@form"/>
+        <composite:attribute name="render" type="java.lang.String" default="@form"/>
+        <composite:attribute name="style" type="java.lang.String" />
+        <composite:attribute name="immediate" default="false"/>
+        <composite:attribute name="disabled" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="lockscreen" type="java.lang.Boolean" default="false"/>
+        <composite:clientBehavior name="click" event="click" targets="link"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <a4j:commandLink
+            id="link"
+            execute="#{cc.attrs.target}"
+            render="#{cc.attrs.render}"
+            status="#{cc.attrs.lockscreen?'waitPanelStatus':''}"
+            disabled="#{cc.attrs.disabled}"
+            styleClass="#{cc.attrs.style}"
+            immediate="#{cc.attrs.immediate}">
+            #{cc.attrs.label}
+        </a4j:commandLink>
+    </composite:implementation>
+</ui:composition>

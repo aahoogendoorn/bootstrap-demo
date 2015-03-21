@@ -1,0 +1,33 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:composite="http://java.sun.com/jsf/composite"
+        xmlns:b="http://java.sun.com/jsf/composite/bootstrap/controls"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="label" type="java.lang.String"/>
+        <composite:attribute name="value" type="java.lang.Object"/>
+        <composite:attribute name="tabindex" type="java.lang.String"/>
+        <composite:attribute name="validatorId" type="java.lang.String"/>
+        <composite:attribute name="onchange" type="java.lang.String"/>
+        <composite:attribute name="required" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="readonly" type="java.lang.Boolean" default="false"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <b:input
+                tabindex="#{cc.attrs.tabindex}"
+                label="#{cc.attrs.label}"
+                value="#{cc.attrs.value}"
+                size="#{cc.attrs.size}"
+                maxlength="#{cc.attrs.maxlength}"
+                placeholder="name@domein.nl"
+                converterId="EmailConverter"
+                glyphIcon="at"
+                >
+        </b:input>
+    </composite:implementation>
+</ui:composition>

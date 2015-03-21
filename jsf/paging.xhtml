@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:composite="http://java.sun.com/jsf/composite"
+        >
+
+    <!-- INTERFACE -->
+    <composite:interface>
+        <composite:attribute name="model" type="nl.klaverblad.libs.web.jsf.components.GridModel" />
+        <composite:attribute name="render" type="java.lang.String" default="@form"/>
+    </composite:interface>
+
+    <!-- IMPLEMENTATION -->
+    <composite:implementation>
+        <ul class="pagination pull-right">
+            <li class="#{cc.attrs.model.firstPage ? 'disabled' : ''}">
+                <a4j:commandLink
+                    disabled="#{cc.attrs.model.firstPage}"
+                    render="#{cc.attrs.render}"
+                    action="#{cc.attrs.model.previous()}">
+                    Vorige
+                </a4j:commandLink>
+            </li>
+
+            <ui:repeat value="#{cc.attrs.model.objects}" var="o" size="#{cc.attrs.model.maxPage + 1}" varStatus="status">
+                <li >
+                    <a4j:commandLink
+                        render="#{cc.attrs.render}"
+                        action="#{cc.attrs.model.show(status.index)}">
+                         #{status.index + 1}
+                    </a4j:commandLink>
+                </li>
+            </ui:repeat>
+
+            <li class="#{cc.attrs.model.lastPage ? 'disabled' : ''}">
+                <a4j:commandLink
+                    disabled="#{cc.attrs.model.lastPage}"
+                    render="#{cc.attrs.render}"
+                    action="#{cc.attrs.model.next()}">
+                    Volgende
+                </a4j:commandLink>
+
+            </li>
+        </ul>
+    </composite:implementation>
+</ui:composition>
