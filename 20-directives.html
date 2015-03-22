@@ -29,9 +29,8 @@
         <h3>Some directives</h3>
         <p>A pain in the ass or very nice indeed...</p>
     </div>
-    <div class="row">
-        <d-button ng-attr-href="home.html">Go home</d-button>
-    </div>
+        <a class="btn btn-primary">Test</a>
+        <d-button href="home.html">Go home</d-button>
 </div>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
@@ -47,7 +46,8 @@
         .directive('dButton', function(){
                 return {
                     restrict: 'AE',
-                    templateUrl: 'my-button.html',
+                    templateUrl: 'directives/my-button.html',
+                    replace: true,
                     transclude: true,
                     scope: { model: '=model' }
                 };
@@ -55,7 +55,7 @@
         .directive('jumboGreen', function(){
                 return {
                     restrict: 'AE',
-                    templateUrl: 'jumbotron-green.html'
+                    templateUrl: 'directives/jumbotron-green.html'
                 };
         });
 </script>
