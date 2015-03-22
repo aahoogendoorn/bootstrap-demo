@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css-me/home.css" rel="stylesheet">
+    <link href="css-me/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,52 +19,100 @@
     <![endif]-->
 </head>
 <body>
-<div class="container">
-    <div class="row col-lg-12">
-        <h1>Test with different grid settings for large, medium and small</h1>
-        <p>Large starts at ..</p>
+<div class="navbar">
+    <div class="container">
+        <a href="home.html" class="navbar-brand">
+            Home
+        </a>
+    </div>
+</div>
+<div class="jumbotron jumbotron-darkgreen">
+    <div class="container">
+        <div class="row col-lg-12">
+            <h1><i class="fa fa-check-square-o"></i> Buttons!</h1>
+        </div>
+    </div>
+</div>
+<div class="container container-with-bottom">
+    <div class="page-header">
+        <h3>Buttons everywhere <small>real easy</small></h3>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    <h4>Heading</h4>
+                    <h4>Button basics</h4>
                 </div>
                 <div class="panel-body">
                     <blockquote>
                         <p>We do want to add some text and click a button</p>
                         <footer>Says me</footer>
                     </blockquote>
-                    <a class="btn btn-default" href="#">Default</a>
-                    <a class="btn btn-primary" href="#">Primary</a>
-                    <a class="btn btn-danger" href="#"></i>Attention</a>
+                    <p>
+                        <a class="btn btn-default" href="#">Default</a>
+                        <a class="btn btn-success" href="#">Success</a>
+                        <a class="btn btn-info" href="#">Info</a>
+                        <a class="btn btn-primary" href="#">Primary</a>
+                    </p>
+                    <p>
+                        <a class="btn btn-warning" href="#">Warning</a>
+                        <a class="btn btn-danger" href="#">Danger</a>
+                    </p>
+                    <p>
+                        <button class="btn btn-danger"><span class="fa fa-warning" /> Danger</button>
+                        <button class="btn btn-danger"><span class="fa fa-warning"></span> Danger</button>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-3">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    Heading
+                    Size isn't everything
                 </div>
                 <div class="panel-body">
-                    Body
-                    <button class="btn btn-sm btn-success">Small button</button>
-                    <button class="btn btn-xs btn-primary">Extra small button</button>
+                    <p>
+                        <button class="btn btn-lg btn-warning">Large button</button>
+                    </p>
+                    <p>
+                        <button class="btn btn-sm btn-success">Small button</button>
+                    </p>
+                    <p>
+                        <button class="btn btn-xs btn-primary">Extra small button</button>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Heading
+                    Groups of buttons
                 </div>
                 <div class="panel-body">
-                    <div class="btn-group-vertical">
-                        <button class="btn btn-default">We</button>
-                        <button class="btn btn-default">are</button>
-                        <button class="btn btn-default">in a</button>
-                        <button class="btn btn-primary">group</button>
-                    </div>
+                    <p>
+                        <div class="btn-group">
+                            <button class="btn btn-warning">We</button>
+                            <button class="btn btn-default">are</button>
+                            <button class="btn btn-default">in a</button>
+                            <button class="btn btn-primary">group</button>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="btn-group">
+                            <button class="btn btn-default"><span class="fa fa-lg fa-download" title="Archive" /></button>
+                            <button class="btn btn-default"><span class="fa fa-lg fa-save" title="Save" /></button>
+                            <button class="btn btn-default"><span class="fa fa-lg fa-file-o" title="Open" /></button>
+                            <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Adding some tooltip<br>even with <strong>HTML</strong> in it"><span class="fa fa-lg fa-file-o" /></a>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-default">We</button>
+                            <button class="btn btn-default">are</button>
+                            <button class="btn btn-default">in a</button>
+                            <button class="btn btn-primary">group</button>
+                        </div>
+                    </p>
                 </div>
             </div>
         </div>
@@ -73,5 +123,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/tooltip.js"></script>
 </body>
 </html>

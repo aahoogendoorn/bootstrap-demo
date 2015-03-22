@@ -1,6 +1,10 @@
+/*Navbars*/
+
 .navbar {
     margin-bottom: 0;
 }
+
+/*Trons*/
 
 .jumbotron {
     margin-bottom: 0;
@@ -40,9 +44,21 @@
     color: black;
 }
 
+/*Text*/
+
 .text-tiny {
     font-size: 14px !important;
 }
+
+.text-white{
+    color: white;
+    margin-right: 12px;
+}
+
+.text-white:hover{
+    color: lightgray;
+}
+
 
 .img-small {
     height: 120px;
@@ -50,4 +66,10 @@
 
 .container-with-bottom{
     margin-bottom: 100px;
+}
+
+/*Spacing*/
+
+.move-down{
+    margin-top: 30px;
 }

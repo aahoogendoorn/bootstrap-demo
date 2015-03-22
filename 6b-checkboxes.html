@@ -32,11 +32,13 @@
     <div class="container">
         <div class="row col-lg-12">
             <h1><i class="fa fa-check-square-o"></i> Checkboxes!</h1>
-            <p>
+            <p class="text-tiny">
                 By default, checkboxes look like crap in Bootstrap. But, there's lots of libraries to help out. We usually use:
             </p>
-            <p>
-                <strong><a href="https://github.com/flatlogic/awesome-bootstrap-checkbox/">https://github.com/flatlogic/awesome-bootstrap-checkbox</a></strong>
+            <p class="text-tiny">
+                <a class="text-white" target="_blank" href="https://github.com/flatlogic/awesome-bootstrap-checkbox/">
+                    <i class="fa fa-arrow-circle-right"></i> github.com/flatlogic/awesome-bootstrap-checkbox
+                </a>
             </p>
         </div>
     </div>
@@ -47,7 +49,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <h3>Checkboxes</h3>
+            <h4 class="page-header">Checkboxes</h4>
             <p>
                 Let's try a default checkbox</p>
             <p>
@@ -60,35 +62,102 @@
                 </label>
             </div>
             </p>
-            <h4>Awesome Bootstrap Checkbox</h4>
+            <h4 class="move-down">Awesome Bootstrap Checkbox</h4>
             <div class="checkbox">
                 <input type="checkbox" id="checkbox1">
                 <label for="checkbox1"> Check me out</label>
             </div>
-            <h4>A whole bunch of checkboxes</h4>
-            <div class="checkbox checkbox-inline">
+            <h4 class="move-down">A whole bunch of checkboxes</h4>
+            <div class="checkbox">
                 <input type="checkbox" id="checkbox2">
-                <label for="checkbox2"> Defautl</label>
+                <label for="checkbox2"> Default</label>
             </div>
-            <div class="checkbox checkbox-primary checkbox-inline">
+            <div class="checkbox checkbox-primary">
                 <input type="checkbox" id="checkbox3" checked>
                 <label for="checkbox3"> Primary</label>
             </div>
-            <div class="checkbox checkbox-success checkbox-inline">
+            <div class="checkbox checkbox-success">
                 <input type="checkbox" id="checkbox4">
                 <label for="checkbox4"> Success</label>
             </div>
-            <div class="checkbox checkbox-warning checkbox-inline">
+            <div class="checkbox checkbox-warning">
                 <input type="checkbox" id="checkbox5" checked>
                 <label for="checkbox5"> Warning</label>
             </div>
-            <div class="checkbox checkbox-danger checkbox-inline">
+            <div class="checkbox checkbox-danger">
                 <input type="checkbox" id="checkbox6">
                 <label for="checkbox6"> Danger</label>
             </div>
+            <h4 class="move-down">A whole bunch of checkboxes, but now inline</h4>
+            <div class="checkbox checkbox-inline">
+                <input type="checkbox" id="cb2">
+                <label for="cb2"> Default</label>
+            </div>
+            <div class="checkbox checkbox-primary checkbox-inline">
+                <input type="checkbox" id="cb3" checked>
+                <label for="cb3"> Primary</label>
+            </div>
+            <div class="checkbox checkbox-success checkbox-inline">
+                <input type="checkbox" id="cb4">
+                <label for="cb4"> Success</label>
+            </div>
+            <div class="checkbox checkbox-warning checkbox-inline">
+                <input type="checkbox" id="cb5" checked>
+                <label for="cb5"> Warning</label>
+            </div>
+            <div class="checkbox checkbox-danger checkbox-inline">
+                <input type="checkbox" id="cb6">
+                <label for="cb6"> Danger</label>
+            </div>
         </div>
         <div class="col-lg-6">
-            <h3>Radiobuttons</h3>
+            <h4 class="page-header">Radiobuttons</h4>
+            <p>First a regular one...</p>
+            <fieldset class="move-down">
+                <p>Please state your language of choice?</p>
+                <input type="radio" name="language" value="java" /> Java<br/>
+                <input type="radio" name="language" value="csharp" /> C#<br/>
+                <input type="radio" name="language" value="javascript" /> Javascript<br/>
+                <input type="radio" name="language" value="dutch" checked /> Dutch<br/>
+            </fieldset>
+            <h4 class="move-down">With Awesome</h4>
+            <p>Please state your language of choice?</p>
+            <div class="radio radio-danger">
+                <input type="radio" name="language2" id="radio1" value="java">
+                <label for="radio1"> Java</label>
+            </div>
+            <div class="radio radio-danger">
+                <input type="radio" name="language2" id="radio2" value="csharp" checked="">
+                <label for="radio2"> C#</label>
+            </div>
+            <div class="radio radio-danger">
+                <input type="radio" name="language2" id="radio3" value="javascript" checked="">
+                <label for="radio3"> Javascript</label>
+            </div>
+            <div class="radio radio-danger">
+                <input type="radio" name="language2" id="radio4" value="dutch" checked="">
+                <label for="radio4"> Dutch</label>
+            </div>
+            <h4 class="move-down">With Awesome, but refactored</h4>
+            <p>Please state your language of choice?</p>
+            <div class="radio radio-primary">
+                <div>
+                    <input type="radio" name="language3" id="radio5" value="java">
+                    <label for="radio5"> Java</label>
+                </div>
+                <div>
+                    <input type="radio" name="language3" id="radio6" value="csharp" checked="">
+                    <label for="radio6"> C#</label>
+                </div>
+                <div>
+                    <input type="radio" name="language3" id="radio7" value="javascript" checked="">
+                    <label for="radio7"> Javascript</label>
+                </div>
+                <div>
+                    <input type="radio" name="language3" id="radio8" value="dutch" checked="">
+                    <label for="radio8"> Dutch</label>
+                </div>
+            </div>
         </div>
     </div>
 </div>
