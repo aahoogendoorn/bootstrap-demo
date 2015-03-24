@@ -20,14 +20,36 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <img src="images/linkedin.png" style="margin-left: 8px; margin-top: 8px"/>
-    <!--<a href="../" class="navbar-brand">Bootstrap nav</a>-->
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myBar">
+                <span class="fa fa-bars"></span>
+            </button>
+            <a href="home.html" class="navbar-brand">Bootstrap demo's</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myBar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Button</a></li>
+                <li><a href="#">Glyphs</a></li>
+                <li><a href="#">Inputs</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button">AngularJS</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Button</a></li>
+                        <li><a href="#">Glyphs</a></li>
+                        <li><a href="#">Inputs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--<img src="images/linkedin.png" style="margin-left: 8px; margin-top: 8px"/>-->
+    </div>
 </nav>
 <div class="navbar">
     <div class="container">
         <a href="../" class="navbar-brand">
-            Bootstrap div-nav
+            Bootstrap Demo's
         </a>
         <form class="navbar-form navbar-right" role="search">
             <div class="form-group">

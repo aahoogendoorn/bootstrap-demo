@@ -17,16 +17,18 @@
     <![endif]-->
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row col-lg-12">
-        <h1>Test with different grid settings for large, medium and small</h1>
-        <p>Large starts at ..</p>
+        <div class="page-header">
+            <h3>Rows and columns</h3>
+            <p>Let's have a look at Bootstrap's <strong>grid system</strong>.</p>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Heading
+                    col-lg-4 col-md-3 col-sm-6
                 </div>
                 <div class="panel-body">
                     Body
@@ -36,7 +38,7 @@
         <div class="col-lg-4 col-md-6 col-sm-3">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    Heading
+                    col-lg-4 col-md-6 col-sm-3
                 </div>
                 <div class="panel-body">
                     Body
@@ -44,12 +46,70 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-3">
-            <div class="panel panel-primary">
+            <div class="panel panel-danger">
                 <div class="panel-heading">
-                    Heading
+                    col-lg-4 col-md-3 col-sm-3
                 </div>
                 <div class="panel-body">
                     Body
+                </div>
+                <div class="panel-footer">
+                    Footer!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    col-lg-8 col-md-8 col-sm-12
+                </div>
+                <div class="panel-body">
+                    Body
+                    <div class="row">
+                        <div class="col-lg-4 col-md-3 col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    col-lg-4 col-md-3 col-sm-6
+                                </div>
+                                <div class="panel-body">
+                                    Body
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    col-lg-4 col-md-6 col-sm-3
+                                </div>
+                                <div class="panel-body">
+                                    Body
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-sm-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    col-lg-4 col-md-3 col-sm-3
+                                </div>
+                                <div class="panel-body">
+                                    Body
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <a href="#collapseBody" data-toggle="collapse" data-target="#collapseBody">col-lg-4 col-md-4 col-sm-12</a>
+                </div>
+                <div id="collapseBody" class="panel-body panel-collapse">
+                    <h3>Microservices. The good, the bad and the ugly</h3>
+                    <p>Back in 1988, when I was first employed by a company for writing software, the world was fairly simple. The development environment we had was character-based, the database was integrated and traversed with cursors, and we built a whole new administrative system covering everything but the kitchen sink. It took us five years to complete the project, basically because the client kept changing his mind every now and then, and because every change in the code could break code elsewhere in the system. Unit testing hadn’t been invented yet, and testing was done by the end users. In production.</p>
                 </div>
             </div>
         </div>
