@@ -1,0 +1,218 @@
+/*Fonts*/
+
+@font-face {
+    font-family: "myFirstFont";
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "mySecondFont";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+html {
+    font-family: myFirstFont, sans-serif;
+}
+
+body {
+    font-family: mySecondFont, serif;
+    font-size: 14px;
+}
+
+label {
+    font-family: myFirstFont, serif;
+}
+
+a {
+    font-family: mySecondFont, sans-serif;
+    color: rgb(0, 137, 104);
+}
+
+pre {
+    font-family: myFirstFont, sans-serif;
+    font-size: 14px;
+    border:0;
+}
+
+input, button, select, textarea {
+    font-family: mySecondFont, sans-serif;
+    font-size: 13px;
+}
+
+.pull-right{
+    padding-right: 10px;
+}
+
+.radio label, .checkbox label {
+    font-family: mySecondFont, sans-serif;
+    font-size: 13px;
+}
+
+a:hover, a:focus {
+    color: #B50325;
+}
+
+p {
+    font-family: mySecondFont, sans-serif;
+    color: #333333;
+    font-size: 13px;
+}
+
+p.text {
+    font-family: mySecondFont, sans-serif;
+    color: #333333;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 .navbar {
+    font-family: myFirstFont, sans-serif;
+    color: #008968;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h2.red {
+    color: #B50325;
+}
+
+h2.red-thin {
+    color: #B50325;
+    font-family: mySecondFont;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h4.thin {
+    font-family: mySecondFont;
+}
+
+h5 {
+    font-size: 16px;
+    border-bottom: 1px solid #D4E2DD;
+    padding-bottom: 11px;
+}
+
+.panel-klv > .panel-heading {
+    color: #008968;
+    /*background-color: #E5F3EF;*/
+    /*border-color: #D4E2DD;*/
+}
+
+.panel-klv > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #D4E2DD;
+}
+
+.panel-klv > .panel-heading .badge {
+    color: #E5F3EF;
+        background-color:#008968;
+}
+
+.panel-klv > .panel-footer + .panel-collapse > .panel-body {
+    /*border-bottom-color: #D4E2DD;*/
+}
+
+li {
+    color:#008968;
+}
+
+.login-box {
+    max-width: 330px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.panel-heading {
+    /* padding: 10px 0; */
+    border-bottom: 1px solid #D4E2DD;
+    padding: 10px 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-body {
+    padding: 10px 0 10px 0;
+}
+
+
+.panel-title {
+    color: #008968;
+}
+
+ /* Grids */
+
+.panel-grid {
+    border-color: #D4E2DD;
+}
+
+.panel-grid .panel-heading{
+    padding: 15px 10px;
+    background-color: whitesmoke;
+}
+
+.panel-grid .panel-body{
+    /*padding-left: 5px;*/
+    font-size: 13px;
+}
+
+/* Tables */
+
+th {
+    font-weight: normal;
+    color: #008968;
+    font-family: myFirstFont;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+}
+
+/* Radio's en checkboxes */
+
+.radio, .checkbox {
+     margin-top: 0;
+}
+
+/* Navbar */
+
+.navbar-brand {
+    padding: 15px 0;
+    margin-right: 20px;
+}
+
+/* Buttons */
+
+.btn-80 {
+    width: 80px;
+}
+
+.btn-group-vertical > .btn-md {
+    width: 120px;
+}
+
+.btn-group-vertical{
+    margin-bottom: 10px;
+}
+
+.btn[disabled] .btn {
+    opacity: 1;
+    color: lightgrey;
+}
+
+ /*Standaard icons*/
+
+.fa-icon-notitie {
+    content: "\f0f6";
+}

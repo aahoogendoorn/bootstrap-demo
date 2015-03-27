@@ -10,6 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css-me/font-awesome.min.css" rel="stylesheet">
     <link href="css-me/home.css" rel="stylesheet">
+    <link href="css-me/fonts-applied.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,8 +20,20 @@
     <![endif]-->
 </head>
 <body>
-<div class="navbar">
-    <a href="../" class="navbar-brand">Bootstrap Demo's</a>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myBar">
+                <span class="fa fa-bars"></span>
+            </button>
+            <a href="home.html" class="navbar-brand">Bootstrap demo's</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myBar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="404-resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 <div class="jumbotron jumbotron-blue">
     <div class="container">
@@ -91,8 +104,20 @@
             <p>
                 <a class="btn btn-success" href="6-inputs.html">Inputs</a>
                 <a class="btn btn-success" href="6b-checkboxes.html">Checkboxes</a>
+                <a class="btn btn-success" href="6c-selects.html">Selects</a>
             </p>
         </div>
+    </div>
+</div>
+<div class="jumbotron jumbotron-yellow">
+    <div class="container">
+        <img src="images/AngularJS.png" />
+        <h1>Reusable UI components</h1>
+        <p>We'll go out and have a look at creating controls with AngularJS directives, Razor syntax and even some JSF</p>
+        <p>
+            <a class="btn btn-transparant" href="20-directives.html">AngularJS directives</a>
+            <a class="btn btn-transparant" href="20b-directives-advanced.html">Some more directives</a>
+        </p>
     </div>
 </div>
 

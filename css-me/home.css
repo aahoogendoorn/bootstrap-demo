@@ -4,6 +4,23 @@
     margin-bottom: 0;
 }
 
+.navbar-default {
+    margin-bottom: 0;
+    background-color: white;
+}
+
+body{
+    padding-top: 50px;
+}
+
+/* Buttons */
+
+.btn-transparant{
+    background: none;
+    color: white;
+    border-color: white;
+}
+
 /*Trons*/
 
 .jumbotron {
@@ -41,6 +58,24 @@
 }
 
 .jumbotron-green h4{
+    color: black;
+}
+
+.jumbotron-orange {
+    color: white;
+    background: url("../images/arabesque.png") repeat scroll center center orange;
+    background-repeat: repeat;
+}
+
+.jumbotron-yellow {
+    text-align: center;
+    color: white;
+    background-color: #FFD700;
+    /*background: url("../images/arabesque.png") repeat scroll center center orange;*/
+    background-repeat: repeat;
+}
+
+.jumbotron-yellow p{
     color: black;
 }
 
